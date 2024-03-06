@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
 import Card from "@/app/components/Card";
 import { NextRequest } from "next/server";
+import { formatEther } from "viem";
 
 export const runtime = "edge";
 
 export async function GET(
   _req: NextRequest,
   {
-    params: { mintCost, burnProceeds },
-  }: { params: { mintCost: string; burnProceeds: string } }
+    params: { mintCost, burnProceeds, amount },
+  }: { params: { mintCost: string; burnProceeds: string; amount: string } }
 ) {
   return new ImageResponse(
     (
@@ -29,21 +30,26 @@ export async function GET(
         >
           <img
             src={"https://www.unlonely.app/icons/icon-192x192.png"}
-            style={{ height: "100%", objectFit: "cover", width: "50%" }}
-          />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              fontSize: 36,
-              padding: 20,
-            }}
+            style={{ height: "100%", objectFit: "cover", position: "relative" }}
           >
-            <div style={{ display: "flex" }}>Buy Price: {mintCost} ETH</div>
-            <div style={{ display: "flex" }}>
-              Sell Price: {burnProceeds} ETH
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                fontSize: 36,
+                padding: 20,
+                position: "absolute",
+              }}
+            >
+              <div style={{ display: "flex" }}>Entered $VIBES: {amount}</div>
+              <div style={{ display: "flex" }}>
+                Buy Price: {formatEther(BigInt(mintCost))} ETH
+              </div>
+              <div style={{ display: "flex" }}>
+                Sell Price: {formatEther(BigInt(burnProceeds))} ETH
+              </div>
             </div>
-          </div>
+          </img>
         </div>
       </Card>
     ),
