@@ -23,3 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
+
+export default async function Vibes() {
+  return (
+    <main className="flex flex-col text-center lg:p-16">
+      <h1>vibes</h1>
+    </main>
+  );
+}
