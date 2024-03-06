@@ -30,7 +30,12 @@ export async function GET(
         >
           <img
             src={"https://www.unlonely.app/icons/icon-192x192.png"}
-            style={{ height: "100%", objectFit: "cover", position: "relative" }}
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              position: "relative",
+            }}
           >
             <div
               style={{
@@ -47,10 +52,10 @@ export async function GET(
               <div style={{ display: "flex", color: "#bababa" }}>
                 what would you like to do?
               </div>
-              <div style={{ display: "flex", color: "#3ec400" }}>
+              <div style={{ display: "flex" }}>
                 Buy Price: {formatEther(BigInt(mintCost))} ETH
               </div>
-              <div style={{ display: "flex", color: "#dc550c" }}>
+              <div style={{ display: "flex" }}>
                 Sell Price: {formatEther(BigInt(burnProceeds))} ETH
               </div>
             </div>

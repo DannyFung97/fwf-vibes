@@ -24,7 +24,7 @@ export async function POST(
     method: "eth_sendTransaction",
     params: {
     //   abi: [functionAbi, ...errorsAbi],
-      abi: [functionAbi],
+      abi: functionAbi,
       to: contract_address,
       data,
       value: mintCost.toString(),
