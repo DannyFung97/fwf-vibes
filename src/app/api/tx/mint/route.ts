@@ -9,6 +9,7 @@ export async function POST(
   _req: NextRequest,
   { params: { mintCost, amount } }: { params: { mintCost: string, amount: string } }
 ) {
+  try {
   const data = encodeFunctionData({
     abi: VibesTokenAbi,
     functionName: "mint",
@@ -30,8 +31,12 @@ export async function POST(
       value: mintCost,
     },
   };
-  console.log(txData)
   return NextResponse.json(txData);
+} catch (e) {
+  console.log(e)
+  return new NextResponse("Bad Request".concat(String(e)), { status: 400 });
+}
+
 }
 
 export const GET = POST;
