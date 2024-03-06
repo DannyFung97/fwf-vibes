@@ -20,10 +20,10 @@ export async function POST(
     name: "mint",
   });
   const txData = {
-    chainId: `eip155:8453`,
+    chainId: `8453`,
     method: "eth_sendTransaction",
     params: {
-    functionSignature: "", // deprecated, use abi below
+      functionSignature: "", // deprecated, use abi below
       abi: [functionAbi, ...errorsAbi],
       to: contract_address,
       data,
