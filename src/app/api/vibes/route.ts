@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
               <meta name="fc:frame:button:1" content="mint!" />
               <meta name="fc:frame:button:1:action" content="tx" />
               <meta name="fc:frame:button:1:target" content="${mintTxUrl}" />
-              <meta name="fc:frame:button:1" content="burn!" />
+              <meta name="fc:frame:button:2" content="burn!" />
               <meta name="fc:frame:button:2:action" content="tx" />
               <meta name="fc:frame:button:2:target" content="${burnTxUrl}" />
             </head>
