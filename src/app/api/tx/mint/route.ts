@@ -27,7 +27,7 @@ export async function POST(
       abi: [functionAbi, ...errorsAbi],
       to: contract_address,
       data,
-      value: mintCost.toString(),
+      value: mintCost,
     },
   };
   return NextResponse.json(txData);
