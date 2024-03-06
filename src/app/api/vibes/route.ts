@@ -1,8 +1,5 @@
-import getFulfillment from "@/app/lib/getFulfillment";
-import getListing from "@/app/lib/getListing";
-import getToken from "@/app/lib/getToken";
 import { NextRequest, NextResponse } from "next/server";
-import { createPublicClient, formatEther, http } from "viem";
+import { createPublicClient, http } from "viem";
 import VibesTokenAbi from "../../lib/abi/VibesToken.json";
 import { base } from "viem/chains";
 import { getSSLHubRpcClient, Message } from "@farcaster/hub-nodejs";
@@ -19,18 +16,18 @@ export async function POST(req: NextRequest) {
       untrustedData: { inputText },
       trustedData: { messageBytes },
     } = await req.json();
-    const frameMessage = Message.decode(Buffer.from(messageBytes, "hex"));
-    const validateResult = await hubClient.validateMessage(frameMessage);
+    // const frameMessage = Message.decode(Buffer.from(messageBytes, "hex"));
+    // const validateResult = await hubClient.validateMessage(frameMessage);
 
-    if (validateResult.isOk() && validateResult.value.valid) {
+    // if (validateResult.isOk() && validateResult.value.valid) {
 
-      const validMessage = validateResult.value.message;
+      // const validMessage = validateResult.value.message;
   
-      let urlBuffer = validMessage?.data?.frameActionBody?.url ?? [];
-      const urlString = Buffer.from(urlBuffer).toString("utf-8");
-      if (!urlString.startsWith(process.env["HOST"] ?? "")) {
-        return new NextResponse("Bad Request", { status: 400 });
-      }
+      // let urlBuffer = validMessage?.data?.frameActionBody?.url ?? [];
+      // const urlString = Buffer.from(urlBuffer).toString("utf-8");
+      // if (!urlString.startsWith(process.env["HOST"] ?? "")) {
+      //   return new NextResponse("Bad Request", { status: 400 });
+      // }
 
         const postUrl = `${HOST}/api/watchTx`;
 
@@ -101,9 +98,9 @@ export async function POST(req: NextRequest) {
             },
           }
         );
-    } else {
-      return new NextResponse("Unauthorized", { status: 401 });
-    }
+    // } else {
+    //   return new NextResponse("Unauthorized", { status: 401 });
+    // }
   }
   
   export const GET = POST;
