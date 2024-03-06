@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createPublicClient, http } from "viem";
-import VibesTokenAbi from "../../lib/abi/VibesToken.json";
+import VibesTokenAbi from "../../lib/abi/VibesToken";
 import { base } from "viem/chains";
 import { getSSLHubRpcClient, Message } from "@farcaster/hub-nodejs";
 
