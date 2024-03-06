@@ -41,11 +41,16 @@ export async function GET(
                 position: "absolute",
               }}
             >
-              <div style={{ display: "flex" }}>Entered $VIBES: {amount}</div>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", color: "#ffffff" }}>
+                Entered $VIBES: {amount}
+              </div>
+              <div style={{ display: "flex", color: "#bababa" }}>
+                what would you like to do?
+              </div>
+              <div style={{ display: "flex", color: "#3ec400" }}>
                 Buy Price: {formatEther(BigInt(mintCost))} ETH
               </div>
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", color: "#dc550c" }}>
                 Sell Price: {formatEther(BigInt(burnProceeds))} ETH
               </div>
             </div>
