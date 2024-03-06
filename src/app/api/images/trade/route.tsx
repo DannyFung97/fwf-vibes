@@ -27,10 +27,10 @@ export async function GET(
             height: "100vh",
           }}
         >
-          {/* <img
-            src={image}
+          <img
+            src={"https://www.unlonely.app/icons/icon-192x192.png"}
             style={{ height: "100%", objectFit: "cover", width: "50%" }}
-          /> */}
+          />
           <div
             style={{
               display: "flex",

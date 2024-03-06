@@ -22,6 +22,10 @@ export async function GET(_req: NextRequest) {
             height: "100vh",
           }}
         >
+          <img
+            src={"https://www.unlonely.app/icons/icon-192x192.png"}
+            style={{ height: "100%", objectFit: "cover", width: "50%" }}
+          />
           <div
             style={{
               display: "flex",
