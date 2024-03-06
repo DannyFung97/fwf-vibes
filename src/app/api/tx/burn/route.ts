@@ -29,6 +29,7 @@ export async function POST(
       data,
     },
   };
+  console.log(txData)
   return NextResponse.json(txData);
 }
 

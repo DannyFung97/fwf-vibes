@@ -30,6 +30,7 @@ export async function POST(
       value: mintCost,
     },
   };
+  console.log(txData)
   return NextResponse.json(txData);
 }
 
