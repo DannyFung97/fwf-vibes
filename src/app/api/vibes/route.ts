@@ -55,6 +55,7 @@ export async function POST(req: NextRequest) {
         const imageParams = new URLSearchParams({
             mintCost: mintRes as string,
             burnProceeds: burnRes as string,
+            amount: formattedInput as string,
           });
   
         const imageUrl = `${process.env["HOST"]}/api/images/trade?${imageParams.toString()}`;
