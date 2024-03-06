@@ -53,10 +53,10 @@ export async function GET(
                 what would you like to do?
               </div>
               <div style={{ display: "flex" }}>
-                Buy Price: {formatEther(BigInt(mintCost))} ETH
+                Buy Price for {amount}: {formatEther(BigInt(mintCost))} ETH
               </div>
               <div style={{ display: "flex" }}>
-                Sell Price: {formatEther(BigInt(burnProceeds))} ETH
+                Sell Price for {amount}: {formatEther(BigInt(burnProceeds))} ETH
               </div>
             </div>
           </img>
