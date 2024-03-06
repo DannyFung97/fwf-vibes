@@ -24,18 +24,25 @@ export async function GET(_req: NextRequest) {
         >
           <img
             src={"https://www.unlonely.app/icons/icon-192x192.png"}
-            style={{ height: "100%", objectFit: "cover", width: "50%" }}
-          />
-          <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              fontSize: 36,
-              padding: 20,
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              position: "relative",
             }}
           >
-            <div style={{ display: "flex" }}>Buy or sell $VIBES here!</div>
-          </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                fontSize: 36,
+                padding: 20,
+                position: "absolute",
+              }}
+            >
+              <div style={{ display: "flex" }}>Buy or sell $VIBES here!</div>
+            </div>
+          </img>
         </div>
       </Card>
     ),
