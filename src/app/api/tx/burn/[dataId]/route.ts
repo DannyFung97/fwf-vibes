@@ -21,7 +21,7 @@ export async function POST(
     name: "burn",
   });
   const txData = {
-    chainId: `8453`,
+    chainId: `eip155:8453`,
     method: "eth_sendTransaction",
     params: {
       functionSignature: "", // deprecated, use abi below
