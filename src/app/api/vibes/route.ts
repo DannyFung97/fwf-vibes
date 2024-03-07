@@ -48,18 +48,9 @@ export async function POST(req: NextRequest) {
   
         const imageUrl = `${process.env["HOST"]}/api/images/trade?${imageParams.toString()}`;
 
-        const mintParams = new URLSearchParams({
-            mintCost: String(mintRes),
-            amount: formattedInput as string,
-          });
+        const mintTxUrl = `${HOST}/api/tx/mint/${String(mintRes).concat('-').concat(formattedInput as string)}`;
 
-        const mintTxUrl = `${HOST}/api/tx/mint?${mintParams.toString()}`;
-
-        const burnParams = new URLSearchParams({
-            amount: formattedInput as string,
-          });
-
-        const burnTxUrl = `${HOST}/api/tx/burn?${burnParams.toString()}`;
+        const burnTxUrl = `${HOST}/api/tx/burn/${formattedInput as string}`;
 
         return new NextResponse(
           `<!DOCTYPE html>

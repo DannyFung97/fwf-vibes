@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { encodeFunctionData, getAbiItem } from "viem";
-import VibesTokenAbi from "../../../lib/abi/VibesToken";
+import VibesTokenAbi from "../../../../lib/abi/VibesToken";
 
 const protocol_address = '0x53D6D64945A67658C66730Ff4a038eb298eC8902'
 const contract_address = '0xEAB1fF15f26da850315b15AFebf12F0d42dE5421'
 
 export async function POST(
   _req: NextRequest,
-  { params: { amount } }: { params: { amount: string } }
+  { params: { dataId } }: { params: { dataId: string } }
 ) {
 
   const mintAbi = [{
@@ -32,7 +32,7 @@ export async function POST(
   const data = encodeFunctionData({
     abi: mintAbi,
     functionName: "burn",
-    args: [BigInt(amount), protocol_address],
+    args: [BigInt(dataId), protocol_address],
   });
   const errorsAbi = VibesTokenAbi.filter((t) => t.type === "error");
   const functionAbi = getAbiItem({
