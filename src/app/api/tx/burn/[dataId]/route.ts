@@ -10,27 +10,8 @@ export async function POST(
   { params: { dataId } }: { params: { dataId: string } }
 ) {
 
-  const mintAbi = [{
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256"
-      },
-      {
-        internalType: "address",
-        name: "_streamerAddress",
-        type: "address"
-      }
-    ],
-    name: "mint",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function"
-  }]
-
   const data = encodeFunctionData({
-    abi: mintAbi,
+    abi: VibesTokenAbi,
     functionName: "burn",
     args: [BigInt(dataId), protocol_address],
   });
