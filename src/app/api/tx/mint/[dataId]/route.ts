@@ -10,7 +10,7 @@ export async function POST(
   { params: { dataId } }: { params: { dataId: string } }
 ) {
 
-  const split = dataId.split('-');
+  const split = dataId.split(':');
   const mintCost = split[0];
   const amount = split[1];
 

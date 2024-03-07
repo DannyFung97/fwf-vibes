@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   
         const imageUrl = `${process.env["HOST"]}/api/images/trade?${imageParams.toString()}`;
 
-        const mintTxUrl = `${HOST}/api/tx/mint/${String(mintRes).concat('-').concat(formattedInput as string)}`;
+        const mintTxUrl = `${HOST}/api/tx/mint/${String(mintRes).concat(':').concat(formattedInput as string)}`;
 
         const burnTxUrl = `${HOST}/api/tx/burn/${formattedInput as string}`;
 
